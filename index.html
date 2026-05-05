@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Access | HOZEFA Security</title>
+    <title>فحص أمني | حذيفة</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Share+Tech+Mono&display=swap');
         
         * {
             margin: 0;
@@ -16,7 +15,7 @@
         
         body {
             background: linear-gradient(135deg, #0a0f0a 0%, #0a1f0a 100%);
-            font-family: 'Share Tech Mono', monospace;
+            font-family: 'Cairo', 'Share Tech Mono', monospace;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -26,7 +25,7 @@
             overflow-x: hidden;
         }
         
-        /* Animated background grid */
+        /* خلفية شبكية متحركة */
         .grid {
             position: fixed;
             top: 0;
@@ -76,7 +75,7 @@
         
         .header p {
             color: #00cc00;
-            font-size: 12px;
+            font-size: 14px;
             margin-top: 10px;
         }
         
@@ -85,7 +84,7 @@
             border-left: 4px solid #00ff00;
             padding: 20px;
             margin: 20px 0;
-            font-family: 'Share Tech Mono', monospace;
+            font-family: 'Cairo', monospace;
         }
         
         .message-line {
@@ -121,28 +120,43 @@
         
         .warning-box {
             background: linear-gradient(135deg, #1a0000, #2a0000);
-            border: 1px solid #ff0000;
+            border: 2px solid #ff0000;
             border-radius: 10px;
-            padding: 20px;
+            padding: 25px;
             margin-top: 30px;
             color: #ff6666;
-            font-size: 14px;
+            font-size: 16px;
+            text-align: right;
         }
         
         .warning-box h3 {
             color: #ff3333;
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            text-align: center;
         }
         
         .warning-box ul {
-            margin-left: 20px;
-            line-height: 1.8;
+            margin-right: 20px;
+            line-height: 2;
+        }
+        
+        .warning-box li {
+            margin-bottom: 10px;
+        }
+        
+        .signature {
+            margin-top: 20px;
+            text-align: center;
+            color: #00ff00;
+            font-size: 14px;
+            border-top: 1px solid #ff3333;
+            padding-top: 15px;
         }
         
         .progress-bar {
             width: 100%;
-            height: 2px;
+            height: 3px;
             background: #003300;
             margin: 20px 0;
             position: relative;
@@ -154,7 +168,7 @@
             height: 100%;
             background: #00ff00;
             position: absolute;
-            animation: progress 4s ease-out forwards;
+            animation: progress 5s ease-out forwards;
         }
         
         @keyframes progress {
@@ -163,8 +177,9 @@
         
         @media (max-width: 600px) {
             .container { padding: 20px; }
-            .message-line { font-size: 12px; }
-            .header h1 { font-size: 20px; }
+            .message-line { font-size: 13px; }
+            .header h1 { font-size: 18px; }
+            .warning-box { font-size: 13px; padding: 15px; }
         }
     </style>
 </head>
@@ -172,8 +187,8 @@
     <div class="grid"></div>
     <div class="container">
         <div class="header">
-            <h1>🔒 SECURE ACCESS PROTOCOL 🔒</h1>
-            <p>HOZEFA Security Systems | Ethical Hacking Division</p>
+            <h1>🔒 نظام الفحص الأمني المتقدم 🔒</h1>
+            <p>مهندس الأمن السيبراني | حذيفة</p>
         </div>
         
         <div class="progress-bar">
@@ -183,31 +198,31 @@
         <div class="status-box" id="messageContainer"></div>
         
         <div class="warning-box" id="warningBox" style="display: none;">
-            <h3>⚠️ SECURITY AWARENESS WARNING ⚠️</h3>
+            <h3>⚠️ تنبيه أمني هام ⚠️</h3>
             <ul>
-                <li>🚨 This was a simulation performed by HOZEFA - Ethical Security Engineer</li>
-                <li>📌 Never click on suspicious links or download files from unknown sources</li>
-                <li>🛡️ Always verify the sender before clicking any link</li>
-                <li>🔐 Use strong passwords and enable 2-factor authentication</li>
-                <li>💡 Remember: Real hackers don't announce their presence</li>
+                <li>🚨 هذه محاكاة تقنية قام بها مهندس الأمن الهجومي: حذيفة</li>
+                <li>📌 لا تضغط أبداً على روابط أو ملفات من مصادر غير موثوقة</li>
+                <li>🛡️ تأكد دائماً من مصدر الرابط قبل الضغط عليه</li>
+                <li>🔐 استخدم كلمات مرور قوية وفعّل التحقق بخطوتين</li>
+                <li>💡 تذكر: المخترق الحقيقي لا يعلن عن وجوده</li>
             </ul>
-            <br>
-            <p style="color: #00ff00; text-align: center;">🎯 Goal: Raise awareness, not fear | Learn Cybersecurity with HOZEFA 🎯</p>
+            <div class="signature">
+                🎯 الهدف: رفع الوعي وليس الخوف | تعلم الأمن السيبراني مع حذيفة 🎯
+            </div>
         </div>
     </div>
 
     <script>
         const messages = [
-            "🚀 INITIALIZING SECURE PROTOCOL...",
-            "📡 Establishing encrypted connection to main server...",
-            "🛡️ Scanning system for vulnerabilities (CVE-2024-XXXX)",
-            "🧠 Analyzing user behavior patterns...",
-            "🔐 Activating TLS 1.3 encryption protocol",
-            "📂 Bypassing firewall security layers...",
-            "💀 Accessing hidden system directories...",
-            "📤 Extracting sensitive data packets...",
-            "✅ System breach successful!",
-            "⚠️ Your device has been compromised! (Just kidding 😉)"
+            "🚀 جاري تهيئة بروتوكول الأمن المتقدم...",
+            "📡 فتح اتصال آمن مع الخادم الرئيسي...",
+            "🛡️ فحص النظام بحثاً عن الثغرات الأمنية...",
+            "🧠 تحليل سلوك المستخدم وأنماط الدخول...",
+            "🔐 تفعيل أعلى مستويات التشفير TLS 1.3",
+            "📂 تجاوز طبقات الحماية بنجاح...",
+            "💀 الدخول إلى المجلدات المخفية للنظام...",
+            "📤 سحب حزم البيانات الحساسة...",
+            "✅ تم اختراق النظام بنجاح!"
         ];
         
         let index = 0;
@@ -221,18 +236,27 @@
                 messageDiv.innerHTML = messages[index] + '<span class="blinking-cursor"></span>';
                 container.appendChild(messageDiv);
                 
+                // Auto scroll to bottom
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                
                 index++;
-                setTimeout(typeMessage, 800);
+                setTimeout(typeMessage, 900);
             } else {
                 setTimeout(() => {
                     warningBox.style.display = 'block';
                     warningBox.style.animation = 'slideIn 0.5s ease forwards';
-                }, 1000);
+                }, 800);
             }
         }
         
-        // Start the animation
+        // Start after half second
         setTimeout(typeMessage, 500);
+        
+        // حماية: منع النقر بزر الماوس الأيمن
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
     </script>
 </body>
 </html>
